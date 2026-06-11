@@ -178,7 +178,7 @@ with tab_live:
         f"{BASE_URL} live from this server — real HTTP requests, real parsing, no cached data."
     )
     n_cats = st.slider("Categories to scrape live", 1, 5, 2)
-    if st.button("🚀 Run live scrape", type="primary"):
+    if st.button(" Run live scrape", type="primary"):
         with st.spinner("Scraping live…"):
             t0 = datetime.now()
             session = make_session()
