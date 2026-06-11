@@ -1,4 +1,4 @@
-# 📈 PricePulse — E-commerce Price Monitoring Dashboard
+#  PricePulse — E-commerce Price Monitoring Dashboard
 
 **Live demo:** https://pricepulse-monitor.streamlit.app · **Author:** [Mubarak Ahmed](https://www.upwork.com/freelancers/mubarakahmedmohamud)
 
