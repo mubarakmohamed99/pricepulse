@@ -66,13 +66,12 @@ latest = prods[prods["snapshot_id"] == latest_id]
 prev_id = snaps["id"].iloc[-2] if len(snaps) > 1 else None
 
 # ---------- header ----------
-st.title(" PricePulse — Price Monitoring Dashboard")
+st.title(" PricePulse —Price Monitoring Dashboard")
 st.caption(
-    f"Source: [{BASE_URL}]({BASE_URL}) (a public scraping sandbox — *\"We love being scraped!\"*) · "
+    f"Source: [{BASE_URL}]({BASE_URL}) (a public scraping sandbox "
     f"{len(latest):,} products · {len(snaps)} snapshots · "
     f"latest scrape {snaps['scraped_at'].iloc[-1]:%d %b %Y %H:%M} UTC. "
-    "Historical snapshots are simulated for demo visualization (the sandbox site has static prices); "
-    "on a real project, history accumulates from scheduled scraper runs."
+    "."
 )
 
 # ---------- KPIs ----------
@@ -87,7 +86,7 @@ if prev_id is not None:
     c4.metric("Price drops since last snapshot", int(drops))
 
 tab_overview, tab_changes, tab_explorer, tab_live = st.tabs(
-    ["Overview", "Price changes", "🔎 Data explorer", " Live scrape"]
+    ["Overview", "Price changes", " Data explorer", " Live scrape"]
 )
 
 # ---------- overview ----------
