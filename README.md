@@ -1,6 +1,6 @@
 # 📈 PricePulse — E-commerce Price Monitoring Dashboard
 
-**Live demo:** *(Streamlit Cloud link here)* · **Author:** [Mubarak Ahmed](https://www.upwork.com/freelancers/mubarakahmedmohamud)
+**Live demo:** https://pricepulse-monitor.streamlit.app · **Author:** [Mubarak Ahmed](https://www.upwork.com/freelancers/mubarakahmedmohamud)
 
 PricePulse scrapes an e-commerce catalogue (1,000 products, 50 categories, full
 pagination), stores timestamped snapshots in SQLite, and serves an interactive
