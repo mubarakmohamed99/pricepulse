@@ -1,6 +1,6 @@
 """
 PricePulse -- E-commerce Price Monitoring Dashboard
-Live demo of a Python scraping + data pipeline + Streamlit stack.
+
 """
 
 import io
@@ -66,7 +66,7 @@ latest = prods[prods["snapshot_id"] == latest_id]
 prev_id = snaps["id"].iloc[-2] if len(snaps) > 1 else None
 
 # ---------- header ----------
-st.title("📈 PricePulse — Price Monitoring Dashboard")
+st.title(" PricePulse — Price Monitoring Dashboard")
 st.caption(
     f"Source: [{BASE_URL}]({BASE_URL}) (a public scraping sandbox — *\"We love being scraped!\"*) · "
     f"{len(latest):,} products · {len(snaps)} snapshots · "
@@ -87,7 +87,7 @@ if prev_id is not None:
     c4.metric("Price drops since last snapshot", int(drops))
 
 tab_overview, tab_changes, tab_explorer, tab_live = st.tabs(
-    ["📊 Overview", "🔻 Price changes", "🔎 Data explorer", "⚡ Live scrape"]
+    ["Overview", "Price changes", "🔎 Data explorer", " Live scrape"]
 )
 
 # ---------- overview ----------
@@ -119,7 +119,7 @@ with tab_overview:
 # ---------- price changes ----------
 with tab_changes:
     if prev_id is None:
-        st.info("Need at least two snapshots to compare. Run the scraper again later.")
+        st.info(".")
     else:
         merged = latest.merge(prev, on="url", suffixes=("", "_prev"))
         merged["change"] = merged["price"] - merged["prev_price"]
@@ -165,9 +165,9 @@ with tab_explorer:
                  column_config={"url": st.column_config.LinkColumn("Product page")})
 
     d1, d2 = st.columns(2)
-    d1.download_button("⬇️ Download CSV", view[cols].to_csv(index=False).encode(),
+    d1.download_button("Download CSV", view[cols].to_csv(index=False).encode(),
                        "pricepulse_products.csv", "text/csv", width='stretch')
-    d2.download_button("⬇️ Download Excel", to_excel_bytes(view[cols]),
+    d2.download_button(" Download Excel", to_excel_bytes(view[cols]),
                        "pricepulse_products.xlsx",
                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                        width='stretch')
@@ -193,5 +193,4 @@ with tab_live:
         st.dataframe(df, width='stretch')
 
 st.divider()
-st.caption("Built by Mubarak Ahmed · Python · Requests/BeautifulSoup · SQLite · Streamlit · "
-           "[Source on GitHub](https://github.com/)")
+st.caption("Built by Mubarak Ahmed ")
